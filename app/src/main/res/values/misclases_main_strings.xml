@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ToolBar -->
+    <string name="brand_cibercheck">CiberCheck</string>
+
+    <!-- Titulo -->
+    <string name="title_mis_clases">Mis Clases</string>
+
+    <!-- Boton -->
+    <string name="btn_marcar_asistencia">Marcar asistencia</string>
+    <string name="btn_historial">Historial de asistencias</string>
+
+    <!-- Estado Curso -->
+    <string name="estado_curso">En curso</string>
+    <string name="estado_inicia_en">Inicia en %1$s</string>
+
+    <!-- Accesibilidad -->
+    <string name="cd_scan_qr">Escanear código QR</string>
+    <string name="cd_historial">Ver historial de asistencias</string>
+    <string name="cd_perfil">Mi perfil</string>
+
+    <!-- Placeholder -->
+    <string name="ph_codigo_periodo">CIBERTEC.4693.202509P.1875</string>
+    <string name="ph_nombre_curso">4693 DESARROLLO DE APLICACIONES MÓVILES I</string>
+    <string name="ph_tiempo_inicio">23 minutos</string>
+</resources>

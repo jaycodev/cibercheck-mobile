@@ -21,6 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Declarando vistas de Mis Clases -->
+        <activity android:name=".MisClasesActivity" android:exported="false" />
+        <activity android:name=".HistorialAsistenciasActivity" android:exported="false" />
+        <activity android:name=".MarcarAsistenciaActivity" android:exported="false" />
+        <activity android:name=".MiPerfilActivity" android:exported="false" />
     </application>
 
 </manifest>
