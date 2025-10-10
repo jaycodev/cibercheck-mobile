@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/cd_scan_qr"
+    app:layout_scrollEffect="none">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tb_misClases"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_20"
+        android:paddingStart="@dimen/space_16"
+        android:paddingEnd="@dimen/space_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/miperfil_topbar">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/space_4"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="20dp">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_cibercheck_logo" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_micuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_8"
+                android:text="@string/brand_cibercheck"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_historial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_16"
+        android:layout_marginBottom="@dimen/space_40"
+
+        android:contentDescription="@string/cd_historial"
+        android:minHeight="@dimen/btn_small_min_height"
+        android:stateListAnimator="@animator/btn_press"
+        android:text="@string/btn_historial"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_12"
+
+        app:backgroundTint="@color/lavanda"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toStartOf="@+id/btn_marcarAsistencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/lavanda_dark" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_marcarAsistencia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_16"
+        android:layout_marginBottom="@dimen/space_40"
+
+        android:minHeight="@dimen/btn_small_min_height"
+        android:stateListAnimator="@animator/btn_press"
+        android:text="@string/btn_marcar_asistencia"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_12"
+
+        app:backgroundTint="@color/lavanda"
+        app:icon="@drawable/ic_qr_logo"
+
+        app:iconGravity="textEnd"
+        app:iconPadding="@dimen/space_8"
+        app:iconSize="@dimen/icon_20"
+        app:iconTint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/lavanda_dark" />
+
+    <TextView
+        android:id="@+id/txtMisClases"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_8"
+        android:text="@string/title_mis_clases"
+        android:textSize="@dimen/text_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_misClases" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_misClases"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_16"
+        android:layout_marginBottom="@dimen/space_12"
+        app:layout_constraintBottom_toTopOf="@+id/btn_historial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMisClases"
+        tools:listitem="@layout/item_curso" />
+</androidx.constraintlayout.widget.ConstraintLayout>
