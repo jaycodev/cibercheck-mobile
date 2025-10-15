@@ -40,7 +40,7 @@ class MisClasesActivity : AppCompatActivity() {
 
         val btnMarcarAsis: Button = findViewById(R.id.btn_marcarAsistencia)
         btnMarcarAsis.setOnClickListener {
-            val intent = Intent(this, MarcarAsistenciaActivity::class.java)
+            val intent = Intent(this, ScanQRActivity::class.java)
             startActivity(intent)
         }
     }
