@@ -12,13 +12,14 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_logo_cibercheck"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_logo_cibercheck"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Cibercheck"
+        android:theme="@style/Theme.CiberCheck"
         tools:targetApi="31">
 
+        <!-- 👇 SplashScreen en MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -28,10 +29,15 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".LoginEmailActivity" android:exported="false" />
+        <activity android:name=".VerificationCodeActivity" android:exported="false" />
         <activity android:name=".MisClasesActivity" android:exported="false" />
         <activity android:name=".HistorialAsistenciasActivity" android:exported="false" />
         <activity android:name=".MarcarAsistenciaActivity" android:exported="false" />
         <activity android:name=".MiPerfilActivity" android:exported="false" />
+
+
+
 
         <activity
             android:name=".ScanQRActivity"

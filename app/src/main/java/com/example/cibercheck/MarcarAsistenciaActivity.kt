@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MarcarAsistenciaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.misclases_marcar_asistencia)
+        setContentView(R.layout.activity_marcar_asistencias)
 
         findViewById<Button>(R.id.btnVolverMarcar).setOnClickListener {
             finish()

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerificationCodeActivity">
+
+    <!-- Encabezado -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tb_verfication_code"
+        android:layout_width="@dimen/bordes"
+        android:layout_height="26dp"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_logo_cibercheck" />
+
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="CiberCheck"
+            android:textColor="@color/primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:width="@dimen/bordes"
+        android:text="@string/verification"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_verfication_code" />
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:width="@dimen/bordes"
+        android:text="@string/code_email"
+        android:textColor="@color/neutral_dark"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+
+    <!-- Correo del usuario -->
+    <TextView
+        android:id="@+id/tvCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:width="@dimen/bordes"
+        android:text="@string/email_response"
+        android:textColor="@color/state_ok"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescripcion" />
+
+    <!-- Cajas de código -->
+    <LinearLayout
+        android:id="@+id/layoutCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCorreo">
+
+        <!-- Estilo directo de inputs -->
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/abc_popup_background_mtrl_mult"
+            android:backgroundTint="@color/neutral_medium"
+
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="@color/neutral_medium"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/abc_popup_background_mtrl_mult"
+            android:backgroundTint="@color/neutral_medium"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="@color/neutral_medium"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/abc_popup_background_mtrl_mult"
+            android:backgroundTint="@color/neutral_medium"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="@color/neutral_medium"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/abc_popup_background_mtrl_mult"
+            android:backgroundTint="@color/neutral_medium"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="@color/neutral_medium"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Botón “No recibí el código” -->
+    <Button
+        android:id="@+id/btnNoRecibi"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/button_secundary"
+        app:cardCornerRadius="25dp"
+        android:elevation="0dp"
+        android:text="@string/not_code"
+        android:textAllCaps="false"
+        android:textColor="@color/text_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutCodigo" />
+
+    <!-- Botón “Volver” -->
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/button_primary"
+        android:elevation="2dp"
+        app:cardCornerRadius="25dp"
+        android:text="@string/return_page"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnNoRecibi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

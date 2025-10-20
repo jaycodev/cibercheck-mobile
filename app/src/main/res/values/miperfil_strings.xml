@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_micuenta">Mi cuenta</string>
+    <string name="email">Ingresa tu Correo Institucional</string>
 
-    <!-- Accesibilidad -->
-    <string name="cd_arrow_back">Volver al menu Mis Clases</string>
 </resources>

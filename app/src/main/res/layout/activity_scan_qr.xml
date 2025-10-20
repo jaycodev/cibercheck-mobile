@@ -7,29 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".ScanQRActivity">
 
+    <!-- Vista de la cámara -->
     <androidx.camera.view.PreviewView
         android:id="@+id/previewView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitCenter"
-        tools:ignore="RenderProblem" />
+        tools:ignore="RenderProblem"
+        tools:background="@color/primary_light" /> <!-- Solo visible en diseño -->
 
+    <!-- Overlay con recuadro -->
     <View
         android:id="@+id/overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/qr_overlay" />
 
+    <!-- Botón de linterna -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnFlash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:text="Encender linterna"
-        android:textColor="@android:color/black"
-        app:backgroundTint="@color/lavanda"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/neutral_dark"
+        app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

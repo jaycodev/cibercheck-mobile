@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="verification">Verificación por código de 4 dígitos</string>
+
+    <string name="code_email">Ingresa el código que te mandamos a tu correo</string>
+
+    <string name="email_response">i123456789@cibertec.edu.pe</string>
+
+    <string name="not_code">No recibí el código</string>
+
+    <string name="return_page">Volver</string>
+
+</resources>

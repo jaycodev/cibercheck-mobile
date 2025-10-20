@@ -1,9 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Cibercheck" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <!-- 🟦 Tema del SplashScreen -->
+    <style name="Theme.CiberCheck.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo_cibercheck</item>
+        <!-- Aquí decimos que después del splash use el tema principal -->
+        <item name="postSplashScreenTheme">@style/Theme.CiberCheck</item>
     </style>
 
-    <style name="Theme.Cibercheck" parent="Base.Theme.Cibercheck" />
+    <!-- 🟩 Tema principal de la app -->
+    <style name="Theme.CiberCheck" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/neutral_dark</item>
+        <item name="colorSecondary">@color/text_btn</item>
+    </style>
+
 </resources>
