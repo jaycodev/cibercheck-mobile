@@ -1,11 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <!-- Colores base -->
     <color name="white">#FFFFFFFF</color>
-    <color name="state_ok">#186B41</color>
-    <color name="state_warning">#6B2418</color>
+    <color name="black">#FF000000</color>
 
-    <!-- Para botones -->
-    <color name="lavanda">#eae1f9</color>
-    <color name="lavanda_dark">#DBC9F2</color>
+    <!-- Colores principales -->
+    <color name="background">#00284A</color>
+    <color name="primary_dark">#0B2C4A</color> <!-- Azul oscuro - fondo principal -->
+    <color name="primary">#124E78</color>       <!-- Azul medio - botones principales -->
+    <color name="primary_light">#1E88E5</color> <!-- Azul brillante - hover o acento -->
+
+
+    <!-- Estados -->
+    <color name="state_ok">#2ECC71</color>      <!-- Verde éxito -->
+    <color name="state_error">#E74C3C</color>   <!-- Rojo error -->
+    <color name="state_warning">#F39C12</color> <!-- Amarillo advertencia -->
+
+    <!-- Tonos neutros -->
+    <color name="neutral_dark">#2C3E50</color>  <!-- Texto o fondo secundario -->
+    <color name="neutral_medium">#BDC3C7</color> <!-- Bordes, botones secundarios -->
+    <color name="neutral_light">#ECF0F1</color>  <!-- Fondos suaves -->
+    <color name="text_btn">#3C494D</color>  <!-- Fondos suaves -->
+
+
+    <!-- Variaciones suaves (para tarjetas o fondos) -->
+    <color name="background_light">#F8FAFC</color>
+    <color name="background_alt">#E9EEF2</color>
+
+    <!-- Para botones personalizados -->
+    <color name="button_primary">#124E78</color>
+    <color name="button_primary_pressed">#1E88E5</color>
+    <color name="button_secundary">#81C2F8</color>
+    <color name="button_secondary_pressed">#BDC3C7</color>
+
+    <!-- Ejemplo de combinación tipo “lavanda” si deseas tonos suaves adicionales -->
+    <color name="blue_soft">#DCEBFA</color>
+    <color name="blue_soft_dark">#B7D4F4</color>
 </resources>

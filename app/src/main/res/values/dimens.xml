@@ -24,4 +24,6 @@
 
     <dimen name="icon_20">20dp</dimen>
     <dimen name="icon_24">24dp</dimen>
+
+    <dimen name="bordes">330dp</dimen>
 </resources>

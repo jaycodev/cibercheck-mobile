@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         // Logica para el boton Test (Cambia a ventana MisClases solo para testear)
         val btnTest: Button = findViewById(R.id.btn_test)
         btnTest.setOnClickListener {
-            val intent = Intent(this, MisClasesActivity::class.java)
+            val intent = Intent(this, LoginEmailActivity::class.java)
             startActivity(intent)
         }
 

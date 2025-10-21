@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_micuenta">Mi cuenta</string>
+
+    <!-- Accesibilidad -->
+    <string name="cd_arrow_back">Volver al menu Mis Clases</string>
+
+    <string name="code_4">Te llegará un código de 4 dígitos a tu correo para validar tu identidad</string>
+
+    <string name="email_login">i123456789@cibertec.edu.pe</string>
+
+    <string name="next">Siguiente</string>
+</resources>

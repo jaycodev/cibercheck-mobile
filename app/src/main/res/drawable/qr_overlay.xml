@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Fondo oscuro -->
+
+    <!-- Fondo oscuro semitransparente -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#B3000000"/>
+            <solid android:color="#88000000"/> <!-- 53% de opacidad -->
         </shape>
     </item>
 
-    <!-- Ventana transparente (el recuadro del escaneo) -->
-    <item
-        android:left="60dp"
-        android:right="60dp"
-        android:top="200dp"
-        android:bottom="300dp">
+    <!-- Área transparente central (recuadro del QR) -->
+    <item>
         <shape android:shape="rectangle">
             <solid android:color="@android:color/transparent"/>
+            <stroke android:color="#FFFFFF" android:width="2dp" /> <!-- borde blanco -->
+            <size
+                android:width="250dp"
+                android:height="250dp"/>
         </shape>
+        <gravity>center</gravity>
     </item>
 </layer-list>
