@@ -1,4 +1,4 @@
-package com.example.cibercheck
+package com.example.cibercheck.entity
 
 data class Curso(
     val periodoId: String,

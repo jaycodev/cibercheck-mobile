@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CiberCheck</string>
+
+    <string name="txt_email">i123456789@cibertec.edu.pe</string>
+    <string name="btn_next">Siguiente</string>
+    <string name="btn_return">Volver</string>
+
+
 </resources>

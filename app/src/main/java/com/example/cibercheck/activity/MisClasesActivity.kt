@@ -1,4 +1,4 @@
-package com.example.cibercheck
+package com.example.cibercheck.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,10 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cibercheck.R
+import com.example.cibercheck.adapter.CursoAdapter
+import com.example.cibercheck.entity.Curso
 import com.google.android.material.appbar.MaterialToolbar
-import org.json.JSONArray
 
 class MisClasesActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.cibercheck
+package com.example.cibercheck.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.cibercheck.R
 import com.google.android.material.appbar.MaterialToolbar
 
 class VerificationCodeActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class VerificationCodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verification_code)
 
-        val toolbar = findViewById<MaterialToolbar>(R.id.tb_verfication_code)
+        val toolbar = findViewById<MaterialToolbar>(R.id.tb_verification_code)
         toolbar.setNavigationOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }

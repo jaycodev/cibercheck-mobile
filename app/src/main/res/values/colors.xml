@@ -29,7 +29,7 @@
     <!-- Para botones personalizados -->
     <color name="button_primary">#124E78</color>
     <color name="button_primary_pressed">#1E88E5</color>
-    <color name="button_secundary">#81C2F8</color>
+    <color name="button_secondary">#81C2F8</color>
     <color name="button_secondary_pressed">#BDC3C7</color>
 
     <!-- Ejemplo de combinación tipo “lavanda” si deseas tonos suaves adicionales -->

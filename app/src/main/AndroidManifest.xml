@@ -21,7 +21,7 @@
 
         <!-- 👇 SplashScreen en MainActivity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,18 +29,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginEmailActivity" android:exported="false" />
-        <activity android:name=".VerificationCodeActivity" android:exported="false" />
-        <activity android:name=".MisClasesActivity" android:exported="false" />
-        <activity android:name=".HistorialAsistenciasActivity" android:exported="false" />
-        <activity android:name=".MarcarAsistenciaActivity" android:exported="false" />
-        <activity android:name=".MiPerfilActivity" android:exported="false" />
+        <activity android:name=".activity.LoginEmailActivity" android:exported="false" />
+        <activity android:name=".activity.VerificationCodeActivity" android:exported="false" />
+        <activity android:name=".activity.MisClasesActivity" android:exported="false" />
+        <activity android:name=".activity.HistorialAsistenciasActivity" android:exported="false" />
+        <activity android:name=".activity.MiPerfilActivity" android:exported="false" />
 
 
 
 
         <activity
-            android:name=".ScanQRActivity"
+            android:name=".activity.ScanQRActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

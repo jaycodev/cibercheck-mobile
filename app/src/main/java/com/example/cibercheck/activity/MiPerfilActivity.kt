@@ -1,7 +1,8 @@
-package com.example.cibercheck
+package com.example.cibercheck.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.cibercheck.R
 import com.google.android.material.appbar.MaterialToolbar
 
 class MiPerfilActivity : AppCompatActivity() {

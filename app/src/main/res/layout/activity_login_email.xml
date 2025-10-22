@@ -1,101 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".LoginEmailActivity">
+    tools:context=".activity.LoginEmailActivity">
 
-    <!-- Logo y nombre -->
+    <!-- 🔹 Barra superior -->
+
+    <!-- 🔹 Título -->
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tb_login_email"
-        android:layout_width="@dimen/bordes"
-        android:layout_height="26dp"
-        android:layout_marginTop="60dp"
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleCentered="false">
 
-        <ImageView
-            android:id="@+id/logoIcon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_logo_cibercheck" />
-
-        <TextView
-            android:id="@+id/tvAppName"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:text="@string/app_name"
-            android:textColor="@color/primary"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp">
+
+            <ImageView
+                android:id="@+id/logoIcon"
+                android:layout_width="@dimen/icon_24"
+                android:layout_height="@dimen/icon_24"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_logo_cibercheck" />
+
+            <!-- Aquí ponemos un margen entre logo y texto -->
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/app_name"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_16"
+                android:textStyle="bold" />
+        </LinearLayout>
+
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <!-- Título principal -->
+
     <TextView
         android:id="@+id/tvTitulo"
-        android:layout_width="@dimen/bordes"
-        android:layout_height="28dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_32"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/space_16"
+        android:text="@string/title_email_login"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_20"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tb_login_email" />
 
-    <!-- Descripción -->
+    <!-- 🔹 Descripción -->
     <TextView
         android:id="@+id/tvDescripcion"
-        android:layout_width="@dimen/bordes"
-        android:layout_height="47dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/code_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/space_16"
+        android:text="@string/message_validation"
         android:textColor="@color/neutral_dark"
-        android:textSize="14sp"
+        android:textSize="@dimen/text_14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
 
-    <!-- Campo de texto -->
-    <EditText
-        android:id="@+id/etCorreo"
-        android:layout_width="@dimen/bordes"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/neutral_medium"
-        android:gravity="center"
-        android:hint="@string/email_login"
-        android:inputType="textEmailAddress"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/neutral_medium"
+    <!-- 🔹 Campo de texto con estilo Material -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCorreo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="368dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/space_24"
+        android:paddingHorizontal="@dimen/space_16"
+        app:boxStrokeColor="@color/neutral_medium"
+        app:hintTextColor="@color/neutral_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDescripcion" />
+        app:layout_constraintTop_toBottomOf="@id/tvDescripcion">
 
-    <!-- Botón -->
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/txt_email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:paddingVertical="@dimen/space_8"
+            android:textColor="@color/black"
+            android:textColorHint="@color/neutral_medium" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- 🔹 Botón -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSiguiente"
-        android:layout_width="@dimen/bordes"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/button_secundary"
-        android:text="@string/next"
+        android:layout_width="340dp"
+        android:layout_height="59dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/btn_next"
         android:textAllCaps="false"
         android:textColor="@color/text_btn"
-        android:textStyle="normal"
+        app:backgroundTint="@color/button_secondary"
+        app:cornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etCorreo" />
+        app:layout_constraintTop_toBottomOf="@id/tilCorreo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
