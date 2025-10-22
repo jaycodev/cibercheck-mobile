@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_my_profile">Mi perfil</string>
+
+    <string name="title_my_data">Mis Datos</string>
+    <string name="tile_security">Seguridad</string>
+    <string name="btn_log_out">Cerrar Sesión</string>
+
+    <string name="placeholder_name">Luis Gonsáles</string>
+
+    <string name="txt_security_pin">PIN de seguridad</string>
+    <string name="txt_fingerprint">Huella digital</string>
+
+</resources>

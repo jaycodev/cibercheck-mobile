@@ -1,4 +1,4 @@
-package com.example.cibercheck
+package com.example.cibercheck.activity
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -16,7 +16,6 @@ import com.example.cibercheck.databinding.ActivityScanQrBinding
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
 import java.io.ByteArrayOutputStream
-import java.nio.ByteBuffer
 
 class ScanQRActivity : AppCompatActivity() {
 

@@ -1,30 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/button_secondary"
+    tools:context=".activity.MiPerfilActivity">
 
+    <!-- 🔹 Toolbar con flecha y título -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tb_miperfil"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_20"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="@dimen/space_16"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_arrow_back"
-        app:navigationContentDescription="@string/cd_arrow_back">
+        app:title="@string/title_my_profile"
+        app:titleCentered="false"
+        app:titleTextColor="@android:color/black" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_micuenta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_micuenta"
-            android:textSize="@dimen/text_14"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="56dp"
-            tools:layout_editor_absoluteY="24dp" />
+    <!-- 🔹 Sección: Mis Datos -->
+    <TextView
+        android:id="@+id/tv_misDatos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/title_my_data"
+        android:textColor="@color/text_btn"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingHorizontal="@dimen/space_16"
+        app:layout_constraintTop_toBottomOf="@id/tb_miperfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    </com.google.android.material.appbar.MaterialToolbar>
+    <LinearLayout
+        android:id="@+id/layout_datos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="@dimen/space_16"
+        app:layout_constraintTop_toBottomOf="@id/tv_misDatos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_nombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:text="@string/placeholder_name"
+            android:textColor="@color/text_btn"
+            android:background="@color/button_secondary_pressed" />
+
+        <TextView
+            android:id="@+id/tv_correoUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:text="@string/txt_email"
+            android:textColor="@color/text_btn"
+            android:background="@color/button_secondary_pressed"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- 🔹 Sección: Seguridad -->
+    <TextView
+        android:id="@+id/tv_seguridad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/tile_security"
+        android:textColor="@color/text_btn"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingHorizontal="@dimen/space_16"
+        app:layout_constraintTop_toBottomOf="@id/layout_datos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layout_seguridad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="@dimen/space_16"
+        app:layout_constraintTop_toBottomOf="@id/tv_seguridad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- PIN de seguridad -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/button_secondary_pressed"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_security_pin"
+                android:textColor="@color/text_btn"
+                android:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/sw_pinSeguridad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="@color/primary"
+                android:trackTint="@color/text_btn"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+        <!-- Huella digital -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/button_secondary_pressed"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_fingerprint"
+                android:textColor="@color/text_btn"
+                android:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/sw_huella"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="@color/primary"
+                android:trackTint="@color/text_btn"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 🔹 Botón cerrar sesión -->
+    <Button
+        android:id="@+id/btn_cerrarSesion"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:text="@string/btn_log_out"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:drawablePadding="8dp"
+        android:backgroundTint="@color/primary"
+        app:layout_constraintTop_toBottomOf="@id/layout_seguridad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
