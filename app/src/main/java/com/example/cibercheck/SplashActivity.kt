@@ -2,12 +2,17 @@ package com.example.cibercheck
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // ======================= TEST LOG =======================
+        Log.d("LOGCAT_TEST", "SplashActivity onCreate - Si ves esto, Logcat funciona.")
+        // ========================================================
+
         // Instala el SplashScreen (Android 12+)
         val splashScreen = installSplashScreen()
 
