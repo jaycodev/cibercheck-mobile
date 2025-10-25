@@ -97,35 +97,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- PIN de seguridad -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/button_secondary_pressed"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="12dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/txt_security_pin"
-                android:textColor="@color/text_btn"
-                android:textSize="14sp" />
-
-            <Switch
-                android:id="@+id/sw_pinSeguridad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:thumbTint="@color/primary"
-                android:trackTint="@color/text_btn"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:padding="8dp"/>
-        </LinearLayout>
-
         <!-- Huella digital -->
         <LinearLayout
             android:layout_width="match_parent"
