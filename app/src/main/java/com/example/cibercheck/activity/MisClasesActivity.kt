@@ -1,9 +1,11 @@
 package com.example.cibercheck.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,15 +14,19 @@ import com.example.cibercheck.R
 import com.example.cibercheck.adapter.CursoAdapter
 import com.example.cibercheck.dto.session.StudentDailyCourseDto
 import com.example.cibercheck.entity.Curso
+import com.example.cibercheck.entity.CursoStatus
 import com.example.cibercheck.service.RetrofitClient
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.launch
+import java.time.LocalTime
+import java.time.temporal.ChronoUnit
 
 class MisClasesActivity : AppCompatActivity() {
 
     private lateinit var rv: RecyclerView
     private lateinit var adpCursos : CursoAdapter
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.misclases_main_page)
@@ -52,30 +58,71 @@ class MisClasesActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loadCursosFromApi() {
         lifecycleScope.launch {
             try {
-                // Calling the new endpoint with the test data you provided.
                 val studentId = 5
-                val date = "2025-10-14" // Corrected format yyyy-MM-dd
+                // Fecha de prueba restaurada
+                val date: String? = "2025-10-14"
 
                 val response = RetrofitClient.instance.getStudentDailySessions(studentId, date)
 
                 if (response.isSuccessful) {
-                    // This is your "console.log". It prints the API data to the Logcat window.
                     Log.d("API_RESPONSE", "Datos recibidos: ${response.body()}")
 
                     val sessions: List<StudentDailyCourseDto> = response.body() ?: emptyList()
 
-                    // Convert the DTO list to a Curso list that the adapter can use.
+                    // --- INICIO DE LA LÓGICA DE TIEMPO ---
+                    val ahora = LocalTime.now()
+
                     val cursos = sessions.map { sessionDto ->
+                        // Asegurarse de que las horas no son nulas
+                        if (sessionDto.startTime == null || sessionDto.endTime == null) {
+                            // Si no hay hora, se trata como un curso normal sin estado de tiempo
+                            return@map Curso(
+                                periodoId = sessionDto.sectionName,
+                                nombre = sessionDto.courseName,
+                                tiempo = "Horario no definido",
+                                status = CursoStatus.UPCOMING,
+                                startTime = null,
+                                endTime = null
+                            )
+                        }
+
+                        val horaInicio = LocalTime.parse(sessionDto.startTime)
+                        val horaFin = LocalTime.parse(sessionDto.endTime)
+                        val minutosParaEmpezar = ChronoUnit.MINUTES.between(ahora, horaInicio)
+
+                        val (status, textoTiempo) = when {
+                            // En curso
+                            ahora.isAfter(horaInicio) && ahora.isBefore(horaFin) -> {
+                                Pair(CursoStatus.IN_PROGRESS, "${sessionDto.startTime} - ${sessionDto.endTime}")
+                            }
+                            // Por empezar (dentro de los 10 minutos previos)
+                            ahora.isBefore(horaInicio) && minutosParaEmpezar in 0..10 -> {
+                                Pair(CursoStatus.STARTING_SOON, "Empieza en $minutosParaEmpezar min")
+                            }
+                            // Finalizado
+                            ahora.isAfter(horaFin) -> {
+                                Pair(CursoStatus.FINISHED, "${sessionDto.startTime} - ${sessionDto.endTime}")
+                            }
+                            // Próximo (más tarde en el día)
+                            else -> {
+                                Pair(CursoStatus.UPCOMING, "${sessionDto.startTime} - ${sessionDto.endTime}")
+                            }
+                        }
+
                         Curso(
-                            periodoId = sessionDto.sectionName, // Assuming sectionName can be used as periodoId
+                            periodoId = sessionDto.sectionName,
                             nombre = sessionDto.courseName,
-                            enCurso = false, // Setting to false as the date is in the future
-                            tiempo = "${sessionDto.startTime} - ${sessionDto.endTime}" // Combining start and end times
+                            tiempo = textoTiempo, // Texto dinámico calculado
+                            status = status,       // Estado dinámico calculado
+                            startTime = sessionDto.startTime,
+                            endTime = sessionDto.endTime
                         )
                     }
+                    // --- FIN DE LA LÓGICA DE TIEMPO ---
 
                     adpCursos.replaceAll(cursos)
 
